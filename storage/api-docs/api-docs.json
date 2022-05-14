@@ -1,0 +1,292 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My First API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/articles": {
+            "get": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Get all articles",
+                "description": "Returns all articles",
+                "operationId": "getAllArticles",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    },
+                    "404": {
+                        "description": "Tag does not exist"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Create new article",
+                "description": "Create new article",
+                "operationId": "createNewArticle",
+                "requestBody": {
+                    "description": "Article object that needs to be added to the store",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    },
+                    "404": {
+                        "description": "Tag does not exist"
+                    }
+                }
+            }
+        },
+        "/articles/{id}": {
+            "get": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Get single article",
+                "description": "Returns single article",
+                "operationId": "getSingleArticle",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    },
+                    "404": {
+                        "description": "Tag does not exist"
+                    }
+                }
+            }
+        },
+        "/articles/{id}/comment": {
+            "get": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Get all comments for article",
+                "description": "Returns all comments for article",
+                "operationId": "getAllCommentsForArticle",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    },
+                    "404": {
+                        "description": "Tag does not exist"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Create new comment",
+                "description": "Create new comment",
+                "operationId": "createNewComment",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Comment object that needs to be added to the store",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    },
+                    "404": {
+                        "description": "Tag does not exist"
+                    }
+                }
+            }
+        },
+        "/articles/{id}/views": {
+            "get": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Get all views for article",
+                "description": "Returns all views for article",
+                "operationId": "getAllViewsForArticle",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    },
+                    "404": {
+                        "description": "Tag does not exist"
+                    }
+                }
+            }
+        },
+        "/articles/{id}/like": {
+            "get": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Get all likes for article",
+                "description": "Returns all likes for article",
+                "operationId": "getAllLikesForArticle",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    },
+                    "404": {
+                        "description": "Tag does not exist"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Create new like",
+                "description": "Create new like",
+                "operationId": "createNewLike",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Like object that needs to be added to the store",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    },
+                    "404": {
+                        "description": "Tag does not exist"
+                    }
+                }
+            }
+        },
+        "/articles/{id}/view": {
+            "post": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Create new view",
+                "description": "Create new view",
+                "operationId": "createNewView",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "View object that needs to be added to the store",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid tag value"
+                    },
+                    "404": {
+                        "description": "Tag does not exist"
+                    }
+                }
+            }
+        }
+    }
+}
